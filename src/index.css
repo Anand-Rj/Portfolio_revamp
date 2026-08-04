@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Style A — Engineer's Monospace.
+  Near-white paper, ink, cobalt accent. Space Grotesk for display,
+  JetBrains Mono for every label / date / number (the systems texture),
+  Inter for long-form reading. No glass, no gradients.
+*/
+
+@layer base {
+  :root {
+    --paper: 60 10% 96%;          /* #F7F6F3 near-white      */
+    --paper-deep: 48 9% 92%;      /* #ECEAE4 sunk panels     */
+    --ink: 240 8% 9%;             /* #16161A near-black      */
+    --ink-soft: 240 4% 35%;       /* #56565E secondary       */
+    --ink-faint: 240 4% 56%;      /* #8A8A93 captions        */
+    --accent: 228 76% 53%;        /* #2C4BE0 cobalt          */
+    --accent-2: 38 72% 47%;       /* #CC8F22 ochre / gold    */
+    --green: 148 62% 37%;         /* #24985B "current" / live*/
+    --rule: 45 12% 86%;           /* hairline borders        */
+
+    --background: var(--paper);
+    --foreground: var(--ink);
+    --card: var(--paper);
+    --card-foreground: var(--ink);
+    --popover: var(--paper);
+    --popover-foreground: var(--ink);
+    --primary: var(--ink);
+    --primary-foreground: var(--paper);
+    --secondary: var(--paper-deep);
+    --secondary-foreground: var(--ink);
+    --muted: var(--paper-deep);
+    --muted-foreground: var(--ink-soft);
+    --accent-foreground: var(--paper);
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 60 10% 96%;
+    --border: var(--rule);
+    --input: var(--rule);
+    --ring: var(--accent);
+    --radius: 0.25rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Display sans for headlines */
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Monospace for metadata, labels, numbers */
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* Legacy alias kept so any stray class still renders sanely */
+  .font-styrene {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.16);
+    color: hsl(var(--ink));
+  }
+}
+
+@layer utilities {
+  /* Mono uppercase eyebrow / section label */
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: hsl(var(--ink-faint));
+    font-weight: 500;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(hsl(var(--accent)), hsl(var(--accent)));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise {
+    animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Background field: dot grid + two slow-drifting glows */
+  .bg-grid {
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--ink) / 0.10) 1px, transparent 0);
+    background-size: 26px 26px;
+  }
+  .bg-glow {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 9999px;
+    filter: blur(70px);
+    background: radial-gradient(circle, hsl(var(--accent) / 0.22), transparent 70%);
+    animation: drift 30s ease-in-out infinite;
+  }
+  .bg-glow-2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 52vw;
+    height: 52vw;
+    border-radius: 9999px;
+    filter: blur(70px);
+    background: radial-gradient(circle, hsl(var(--accent-2) / 0.16), transparent 70%);
+    animation: drift2 38s ease-in-out infinite;
+  }
+  @keyframes drift {
+    0%, 100% { transform: translate(-10vw, -12vh); }
+    50%      { transform: translate(45vw, 22vh); }
+  }
+  @keyframes drift2 {
+    0%, 100% { transform: translate(8vw, 6vh); }
+    50%      { transform: translate(-30vw, -18vh); }
+  }
+
+  /* First-load loader bar */
+  .loadbar {
+    transform-origin: left;
+    animation: loadbar 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  @keyframes loadbar {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+  .cursor-blink { animation: blink 1s step-end infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-glow, .bg-glow-2, .animate-rise, .loadbar, .cursor-blink { animation: none; }
+    .bg-glow { transform: translate(20vw, 8vh); }
+    .bg-glow-2 { transform: translate(-12vw, -6vh); }
+  }
+}
