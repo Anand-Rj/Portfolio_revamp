@@ -2,6 +2,8 @@ import { getAssetPath } from '@/utils/pathUtils';
 
 const SCHOLAR_URL = 'https://scholar.google.com/citations?user=4-Lj0dsAAAAJ&hl=en';
 
+const PORTRAIT_SRC = '/Anand_Portrait_new.webp';
+
 const Hero = () => {
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -64,18 +66,20 @@ const Hero = () => {
 
         <div className="animate-rise order-first md:order-none" style={{ animationDelay: '120ms' }}>
           <figure className="w-48 border border-rule bg-paper-deep/50 p-2 shadow-sm md:w-60">
-            <div className="overflow-hidden">
+            <div
+              className="relative overflow-hidden bg-white"
+              style={{ aspectRatio: '4 / 5' }}
+            >
               <img
-                src={getAssetPath('/Anand_Portrait_web.jpg')}
+                src={getAssetPath(PORTRAIT_SRC)}
                 alt="Anand Ramaswamy Jayshree"
                 loading="eager"
-                className="w-full object-cover object-top"
-                style={{ aspectRatio: '4 / 5' }}
+                className="h-full w-full object-cover object-top"
               />
             </div>
             <figcaption className="mt-2 flex items-start gap-1.5 border-t border-rule pt-2 font-mono text-[11px] leading-relaxed text-ink-faint">
               <span className="text-accent">↳</span>
-              <span>anand ramaswamy jayshree<br />data scientist</span>
+              <span>anand ramaswamy jayshree<br />data scientist / ai engineer</span>
             </figcaption>
           </figure>
         </div>

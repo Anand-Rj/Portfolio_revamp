@@ -4,7 +4,6 @@ import {
   Cpu,
   Database,
   Network,
-  Workflow,
   Zap,
   type LucideIcon,
 } from 'lucide-react';
@@ -37,6 +36,30 @@ export interface PortfolioProject {
 }
 
 const projectItems: PortfolioProject[] = [
+  {
+    id: 'talentcard-kraph',
+    title: '👨‍💻 Talentcard × Kraph (Stealth project by Hygrivix)',
+    description: 'An AI-powered talent profiling platform paired with a multi-agent AI newsletter system — turning verified achievements into living career profiles and personalizing trusted-source news through source-grounded chat and knowledge-graph exploration.',
+    icon: Brain,
+    category: 'AI',
+    status: 'In development',
+    sortRank: 5,
+    tech: ['AI', 'Role-fit Analytics', 'Multi-Agent AI', 'RAG', 'Knowledge Graphs', 'Personalization', 'Generative Video'],
+    fullDescription: 'Talentcard transforms verified achievements into digital career profiles, measures role fit through personalized analytics, and supports continuous learning through a scroll-driven feed of bite-sized content and AI-generated videos. Kraph streamlines daily news discovery and consumption by automatically collecting, summarizing, categorizing, and personalizing content from trusted sources while enabling source-grounded chatbot interactions and knowledge-graph exploration. Both are being built in stealth under Hygrivix.',
+    features: [
+      'Verified-achievement digital career profiles',
+      'Personalized role-fit measurement and analytics',
+      'Professional networking around demonstrated skills and accomplishments',
+      'Scroll-driven learning feed with bite-sized content and AI-generated videos',
+      'Automated trusted-source news collection and categorization',
+      'Multi-agent summarization and content personalization',
+      'Source-grounded chatbot interactions',
+      'Knowledge-graph exploration across related stories and topics',
+    ],
+    challenges: 'Traditional career profiles are static, difficult to verify, and disconnected from ongoing learning and role-specific fit — while daily news discovery is fragmented, time-consuming, and generic summaries lose source context.',
+    solution: 'Combined verified achievements, personalized role-fit analytics, networking, and continuous AI-assisted learning in one career platform, alongside a multi-agent workflow that organizes and personalizes trusted reporting while grounding conversational answers and graph exploration in the original sources.',
+    featured: true,
+  },
   {
     id: 'sunedrion',
     title: 'Sunedrion — LLM Council',

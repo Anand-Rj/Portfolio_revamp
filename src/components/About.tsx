@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { getAssetPath } from '@/utils/pathUtils';
 import ExperienceModal from './ExperienceModal';
 import EducationModal from './EducationModal';
-import { getAssetPath } from '@/utils/pathUtils';
 
 interface Experience {
   company: string;
@@ -28,12 +28,42 @@ interface Education {
 
 const experiences: Experience[] = [
   {
+    company: 'Quick Visit Medical Office',
+    role: 'Clinical Data Analyst',
+    location: 'Phoenix, AZ',
+    period: 'Jun 2026 — Present',
+    current: true,
+    image: getAssetPath('/quick-visit-medical-logo.png'),
+    details:
+      'Improved physician documentation efficiency by 80% under the supervision of Dr. Shashi Jain Goel by developing an AI-powered clinical notes application that converts recorded physician–patient conversations into structured SOAP notes and integrates them with patients\' electronic medical records (EMRs), while analyzing clinical data to enhance patient experience and clinic operations.',
+    technologies: ['AI', 'Clinical NLP', 'EMR Integration', 'Python'],
+    achievements: [
+      'Improved physician documentation efficiency by 80% with an AI-powered clinical notes application',
+      'Converted recorded physician–patient conversations into structured SOAP notes integrated with patients\' EMRs',
+      'Analyzed clinical data to enhance patient experience and clinic operations',
+    ],
+  },
+  {
+    company: 'Dept. of Computer Science, University of Arizona',
+    role: 'Research Volunteer',
+    location: 'Tucson, AZ',
+    period: 'May 2026 — Present',
+    current: true,
+    image: getAssetPath('/university-of-arizona-logo.png'),
+    details:
+      'Advancing inverse reinforcement learning research under the supervision of Dr. Chicheng Zhang by reviewing relevant literature, implementing reinforcement learning algorithms, designing experiments, and analyzing the resulting models.',
+    technologies: ['Reinforcement Learning', 'Inverse RL', 'Python'],
+    achievements: [
+      'Advancing inverse reinforcement learning research under the supervision of Dr. Chicheng Zhang',
+      'Reviewing literature, implementing RL algorithms, and designing experiments to analyze models',
+    ],
+  },
+  {
     company: 'Diversified Botanics',
     role: 'Data Specialist',
     location: 'Draper, UT',
     period: 'Nov 2025 — Mar 2026',
-    current: true,
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/diversified-botanics-logo.png'),
     details:
       'Improved cross-functional decision making across sales and supply chain by streamlining data workflows across Snowflake data warehouses and developing "Sunedrion," a multi-agent LLM Council resulting in enhanced data quality, faster insight generation, and more effective AI-driven decision support for leadership.',
     technologies: ['Snowflake', 'Multi-Agent LLMs', 'Python', 'Data Warehousing'],
@@ -47,7 +77,7 @@ const experiences: Experience[] = [
     role: 'Data Scientist Intern',
     location: 'Philadelphia, PA',
     period: 'Jul 2025 — Nov 2025',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/vivega-logo.png'),
     details:
       'Built an end-to-end AWS-integrated executive dashboard using Python, Streamlit, and Amazon Bedrock that enabled non-technical healthcare analysts to query four years of CMS Star Rating and Risk Score data in natural language.',
     technologies: ['AWS', 'Amazon Bedrock', 'Python', 'Streamlit'],
@@ -61,7 +91,7 @@ const experiences: Experience[] = [
     role: 'Research Engineer Technician (Data Scientist)',
     location: 'Tucson, AZ',
     period: 'Jan 2025 — May 2025',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/university-of-arizona-logo.png'),
     details:
       'Developed a mobile app for patient data collection, insight generation, and trend prediction for ongoing research, integrating generative AI models within the Paradigm framework to create research-specific images.',
     technologies: ['Generative AI', 'Mobile Development', 'Python'],
@@ -75,7 +105,7 @@ const experiences: Experience[] = [
     role: 'AI-HDL Mentor',
     location: 'Tucson, AZ',
     period: 'Oct 2024 — Dec 2024',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/university-of-arizona-logo.png'),
     details:
       'Contributed to AI-HDL, a competition bridging AI and hardware for the silicon industry, serving on the planning committee to strategize execution and acting as a technical advisor to participants.',
     technologies: ['AI', 'Hardware Design'],
@@ -89,7 +119,7 @@ const experiences: Experience[] = [
     role: 'Data Scientist',
     location: 'Chennai, India',
     period: 'Jul 2021 — May 2023',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/motherson-logo.png'),
     details:
       'In-house proof-of-concept work included a Python-based OCR application using computer vision to extract data from mechanical drawings. Client work included embedded C software for Saint-Gobain (automated sunroof tinting) and ESAB (Warrior EDGE machine HMI), following Agile SDLC/STLC.',
     technologies: ['Python', 'Computer Vision', 'OCR', 'Embedded C', 'Agile'],
@@ -107,7 +137,7 @@ const educations: Education[] = [
     degree: 'M.S., Information Science',
     location: 'Tucson, AZ',
     period: 'May 2025',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/university-of-arizona-logo.png'),
     details:
       'Coursework spanning deep learning, machine learning, artificial intelligence, data analytics, and data ethics, with a capstone project on journal recommendation systems.',
     coursework: ['Deep Learning', 'Machine Learning', 'AI', 'Data Analytics', 'Data Ethics', 'Capstone Project'],
@@ -117,7 +147,7 @@ const educations: Education[] = [
     degree: 'Post Graduate Program, Data Science and Business Analytics',
     location: 'Austin, TX',
     period: 'Aug 2022 — Aug 2023',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/ut-austin-logo.png'),
     details: 'Postgraduate program in data science and business analytics through the McCombs School of Business.',
     coursework: ['Data Science', 'Business Analytics', 'Statistics'],
   },
@@ -126,7 +156,7 @@ const educations: Education[] = [
     degree: 'B.E., Electronics and Communication Engineering',
     location: 'Chennai, India',
     period: 'Aug 2016 — Aug 2020',
-    image: getAssetPath('/placeholder.svg'),
+    image: getAssetPath('/anna-university-logo.png'),
     details: 'Foundation in electronics and communication engineering, affiliated with Anna University.',
     coursework: ['Electronics', 'Communication Systems', 'Signal Processing'],
   },
@@ -191,6 +221,33 @@ const principles = [
   },
 ];
 
+const AboutSubheading = ({
+  label,
+  image,
+  imageAlt,
+}: {
+  label: string;
+  image: string;
+  imageAlt: string;
+}) => {
+  return (
+    <div className="mb-8 flex min-h-28 items-center justify-between gap-6 border-y border-rule bg-gradient-to-r from-paper-deep/45 to-transparent px-4 py-3 md:min-h-36 md:px-5">
+      <div className="flex items-center gap-3">
+        <span className="h-7 w-1 rounded-full bg-accent/70" aria-hidden="true" />
+        <p className="eyebrow">{label}</p>
+      </div>
+      <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl border border-rule/70 bg-paper shadow-[0_12px_28px_rgba(35,31,27,0.12)] md:h-28 md:w-28">
+        <img
+          src={getAssetPath(image)}
+          alt={imageAlt}
+          loading="lazy"
+          className="h-full w-full object-contain p-1"
+        />
+      </div>
+    </div>
+  );
+};
+
 const About = () => {
   const [selectedExperience, setSelectedExperience] = useState<Experience | null>(null);
   const [selectedEducation, setSelectedEducation] = useState<Education | null>(null);
@@ -198,27 +255,46 @@ const About = () => {
   return (
     <section id="about" className="mx-auto max-w-5xl px-5 py-20 md:px-8 md:py-28">
       {/* Bio */}
-      <div className="max-w-2xl">
-        <p className="eyebrow mb-6">about</p>
-        <div className="space-y-5 font-display text-xl font-medium leading-relaxed text-ink md:text-2xl">
-          <p>
-            I&apos;m Anand, a data scientist who got curious about what makes
-            AI systems trustworthy enough to act on.
-          </p>
-          <p className="font-normal text-ink-soft">
-            Most of my work sits at the intersection of data engineering,
-            machine learning, and generative AI: multi-agent LLM councils for
-            enterprise decision support, clinical and agricultural computer
-            vision, and RAG-driven assistants. The further I went, the more I
-            wanted every layer, from the data pipeline to the model output,
-            to hold up under scrutiny.
-          </p>
+      <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center md:gap-10">
+        <figure className="order-last mx-auto w-48 flex-shrink-0 md:mx-0 md:w-56 lg:w-64">
+          <img
+            src={getAssetPath('/minime-building.webp')}
+            alt="Illustrated mini-me of Anand kneeling, building a robot and circuit board"
+            loading="lazy"
+            className="w-full object-contain drop-shadow-[0_18px_22px_rgba(35,31,27,0.18)]"
+            style={{ aspectRatio: '1 / 1' }}
+          />
+          <figcaption className="mt-2 hidden border-t border-rule pt-2 text-center font-mono text-[11px] text-ink-faint md:block">
+            building, day to day
+          </figcaption>
+        </figure>
+
+        <div className="max-w-2xl">
+          <p className="eyebrow mb-6">about</p>
+          <div className="space-y-5 font-display text-xl font-medium leading-relaxed text-ink md:text-2xl">
+            <p>
+              I&apos;m Anand, a data scientist who got curious about what makes
+              AI systems trustworthy enough to act on.
+            </p>
+            <p className="font-normal text-ink-soft">
+              Most of my work sits at the intersection of data engineering,
+              machine learning, and generative AI: multi-agent LLM councils for
+              enterprise decision support, clinical and agricultural computer
+              vision, and RAG-driven assistants. The further I went, the more I
+              wanted every layer, from the data pipeline to the model output,
+              to hold up under scrutiny.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* How I think */}
       <div className="mt-20">
-        <p className="eyebrow mb-8">how i think</p>
+        <AboutSubheading
+          label="how i think"
+          image="/minime-reading-sit.webp"
+          imageAlt="Illustrated Anand reading and thinking"
+        />
         <div className="grid gap-10 md:grid-cols-3">
           {principles.map((p) => (
             <div key={p.head}>
@@ -233,7 +309,11 @@ const About = () => {
 
       {/* Experience */}
       <div className="mt-20">
-        <p className="eyebrow mb-8">where i&apos;ve worked</p>
+        <AboutSubheading
+          label="where i've worked"
+          image="/minime-laptop.webp"
+          imageAlt="Illustrated Anand working on a laptop"
+        />
         <div className="space-y-3">
           {experiences.map((exp) => (
             <button
@@ -246,7 +326,7 @@ const About = () => {
                   <img
                     src={exp.image}
                     alt={exp.company}
-                    className="h-12 w-12 flex-shrink-0 rounded-lg bg-paper object-contain p-1.5 grayscale transition duration-300 group-hover:grayscale-0 md:h-14 md:w-14"
+                    className="h-12 w-12 flex-shrink-0 rounded-lg bg-paper object-contain p-1.5 md:h-14 md:w-14"
                   />
                   <span className="font-mono text-[13px] text-ink-faint">{exp.period}</span>
                 </div>
@@ -287,7 +367,11 @@ const About = () => {
 
       {/* Education */}
       <div className="mt-16">
-        <p className="eyebrow mb-8">studied at</p>
+        <AboutSubheading
+          label="studied at"
+          image="/education-graduate-clean.webp"
+          imageAlt="Illustrated Anand celebrating graduation"
+        />
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {educations.map((edu) => (
             <button
@@ -299,7 +383,7 @@ const About = () => {
                 <img
                   src={edu.image}
                   alt={edu.institution}
-                  className="h-12 w-12 flex-shrink-0 rounded-lg bg-paper object-contain p-1.5 grayscale transition duration-300 group-hover:grayscale-0"
+                  className="h-12 w-12 flex-shrink-0 rounded-lg bg-paper object-contain p-1.5"
                 />
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
@@ -326,7 +410,11 @@ const About = () => {
 
       {/* Academic Achievements */}
       <div className="mt-16">
-        <p className="eyebrow mb-8">academic achievements</p>
+        <AboutSubheading
+          label="academic achievements"
+          image="/achievement-trophy-clean.webp"
+          imageAlt="Illustrated Anand holding a gold achievement trophy"
+        />
         <div className="flex flex-col gap-10">
           {achievements.map((ach) => (
             <div key={ach.title} className="border border-rule bg-paper-deep/30">

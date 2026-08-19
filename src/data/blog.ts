@@ -18,7 +18,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 'iccre-2024-osaka',
-    title: 'Presenting precision cashew farming at ICCRE 2024 in Osaka',
+    title: 'Presented precision cashew farming at ICCRE 2024 in Osaka',
     excerpt:
       'How an AI-driven UAV system for cashew disease detection won a Best Presentation Award at the 2024 International Conference on Control and Robotics Engineering.',
     date: '2024-05-15',
@@ -34,7 +34,7 @@ The work was later published in IEEE Xplore. What stuck with me most from the tr
   },
   {
     id: 'sunedrion-llm-council',
-    title: 'Building Sunedrion, a multi-agent LLM council for enterprise decisions',
+    title: 'Built Sunedrion, a multi-agent LLM council for enterprise decisions',
     excerpt:
       'Notes on building a multi-agent LLM system that helps Diversified Botanics make faster, better cross-functional decisions.',
     date: '2026-02-10',

@@ -4,10 +4,11 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/anandPortfolio/' : '/',
+  base: mode === "production" ? "/anandPortfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: [".ngrok-free.dev"],
   },
   plugins: [
     react(),
