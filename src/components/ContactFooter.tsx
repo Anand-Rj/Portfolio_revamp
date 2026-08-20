@@ -32,8 +32,9 @@ const ContactFooter = () => {
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Machine learning, generative AI, data platforms. Based in Tucson AZ,
-            and open to remote collaboration.
+            Machine learning, generative AI, data platforms, APIs, agentic AI,
+            and AI platforms. Based in Tucson AZ, and open to remote
+            collaboration.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[13px]">

@@ -18,26 +18,38 @@ const Hero = () => {
           <p className="eyebrow mb-6">Data scientist / Tucson AZ</p>
 
           <h1 className="font-display text-4xl font-semibold leading-[1.04] text-ink sm:text-5xl md:text-[3.7rem]">
-            I build machine learning and generative AI systems that turn
-            <span className="text-accent"> data into decisions.</span>
+            I build end-to-end AI systems that turn
+            <span className="text-accent"> data into intelligent decisions.</span>
           </h1>
 
-          <button
-            onClick={() => scrollTo('about')}
-            className="mt-7 inline-flex items-center gap-2.5 border border-rule bg-paper-deep/40 px-4 py-2 font-mono text-[13px] transition-colors hover:border-green"
-          >
-            <span className="flex items-center gap-1.5 text-green">
-              <span className="h-1.5 w-1.5 rounded-full bg-green" /> currently
-            </span>
-            <span className="text-ink">developing Hygrivix</span>
-          </button>
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => scrollTo('about')}
+              className="inline-flex items-center gap-2.5 border border-rule bg-paper-deep/40 px-4 py-2 font-mono text-[13px] transition-colors hover:border-green"
+            >
+              <span className="flex items-center gap-1.5 text-green">
+                <span className="h-1.5 w-1.5 rounded-full bg-green" /> currently
+              </span>
+              <span className="text-ink">building Hygrivix &amp; Quick Visit Medical Office products</span>
+            </button>
+
+            <button
+              onClick={() => scrollTo('about')}
+              className="inline-flex items-center gap-2.5 border border-rule bg-paper-deep/40 px-4 py-2 font-mono text-[13px] transition-colors hover:border-blue-500"
+            >
+              <span className="flex items-center gap-1.5 text-blue-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" /> researching
+              </span>
+              <span className="text-ink">inverse reinforcement learning</span>
+            </button>
+          </div>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">
             M.S. in Information Science from the University of Arizona. I've
-            worked across data engineering, computer vision, and LLM systems,
-            from multi-agent decision intelligence platforms to clinical and
-            agricultural AI research, with publications in IEEE Xplore and
-            IRJET along the way.
+            worked across clinical AI research, multi-agent decision
+            intelligence platforms, data engineering, and computer vision,
+            with agricultural AI research published in IEEE Xplore and
+            IRJET.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3 font-mono text-[13px]">
@@ -49,15 +61,15 @@ const Hero = () => {
             </button>
             <button
               onClick={() => scrollTo('now')}
-              className="border border-rule px-4 py-2.5 text-ink-soft transition-colors hover:border-ink hover:text-ink"
+              className="bg-ink px-4 py-2.5 text-paper transition-colors hover:bg-accent"
             >
-              what i&apos;m on now
+              what i&apos;m on now →
             </button>
             <a
               href={SCHOLAR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-rule px-4 py-2.5 text-ink-soft transition-colors hover:border-ink hover:text-ink"
+              className="bg-ink px-4 py-2.5 text-paper transition-colors hover:bg-accent"
             >
               google scholar ↗
             </a>

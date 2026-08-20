@@ -12,8 +12,8 @@ interface Book {
 }
 
 const books: Book[] = [
-  { title: 'Deep Learning', author: 'Ian Goodfellow, Yoshua Bengio, Aaron Courville', current: true },
-  { title: 'Pattern Recognition and Machine Learning', author: 'Christopher Bishop' },
+  { title: 'Deep Learning', author: 'Ian Goodfellow, Yoshua Bengio, Aaron Courville' },
+  { title: 'Designing Machine Learning Systems', author: 'Chip Huyen', current: true },
   { title: 'Designing Data-Intensive Applications', author: 'Martin Kleppmann' },
 ];
 

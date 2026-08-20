@@ -40,9 +40,9 @@ The work was later published in IEEE Xplore. What stuck with me most from the tr
     date: '2026-02-10',
     readTime: '5 min read',
     tags: ['Multi-Agent LLM', 'Data Engineering'],
-    content: `At Diversified Botanics I built Sunedrion, a multi-agent AI decision intelligence system that orchestrates multiple LLMs to analyze data across sales and supply chain and support leadership decisions.
+    content: `At Diversified Botanics I built Sunedrion, a multi-agent AI decision intelligence system that orchestrates multiple LLMs, each assigned to an executive persona (CEO, CFO, CTO, COO), to analyze cross-functional sales and supply chain data and support leadership decisions.
 
-The core idea is simple: no single model should own a decision that spans functions. Sunedrion routes questions across specialized agents, each grounded in a slice of the underlying Snowflake data warehouses, and synthesizes their outputs into a decision brief a human can act on quickly.
+The core idea is simple: no single model should own a decision that spans functions. Sunedrion routes questions across specialized agents, each grounded in a slice of the underlying Snowflake data warehouses, and synthesizes their outputs into a decision brief a human can act on quickly, helping a real executive prepare for the questions and viewpoints their fellow board members are likely to raise before a board meeting.
 
 The bigger win wasn't raw model quality, it was streamlining the data workflows underneath the agents. Cleaner schemas and faster refresh cycles across the warehouses did as much for decision speed as the LLM orchestration itself. It's a pattern I keep running into: the model is rarely the bottleneck, the data pipeline usually is.`,
   },

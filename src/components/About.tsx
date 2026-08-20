@@ -36,10 +36,10 @@ const experiences: Experience[] = [
     image: getAssetPath('/quick-visit-medical-logo.png'),
     details:
       'Improved physician documentation efficiency by 80% under the supervision of Dr. Shashi Jain Goel by developing an AI-powered clinical notes application that converts recorded physician–patient conversations into structured SOAP notes and integrates them with patients\' electronic medical records (EMRs), while analyzing clinical data to enhance patient experience and clinic operations.',
-    technologies: ['AI', 'Clinical NLP', 'EMR Integration', 'Python'],
+    technologies: ['AI', 'Clinical NLP', 'EMR Integration', 'Python', 'System Design'],
     achievements: [
       'Improved physician documentation efficiency by 80% with an AI-powered clinical notes application',
-      'Converted recorded physician–patient conversations into structured SOAP notes integrated with patients\' EMRs',
+      'Built an AI-powered clinical documentation system that captures physician–patient conversations and automatically generates structured SOAP notes for clinician review and EMR integration',
       'Analyzed clinical data to enhance patient experience and clinic operations',
     ],
   },
@@ -51,11 +51,11 @@ const experiences: Experience[] = [
     current: true,
     image: getAssetPath('/university-of-arizona-logo.png'),
     details:
-      'Advancing inverse reinforcement learning research under the supervision of Dr. Chicheng Zhang by reviewing relevant literature, implementing reinforcement learning algorithms, designing experiments, and analyzing the resulting models.',
-    technologies: ['Reinforcement Learning', 'Inverse RL', 'Python'],
+      'Advancing inverse reinforcement learning research under the supervision of Dr. Chicheng Zhang by reviewing relevant literature, implementing inverse reinforcement learning algorithms, designing experiments, and analyzing the resulting models.',
+    technologies: ['Reinforcement Learning', 'Inverse RL', 'Python', 'RL Simulation'],
     achievements: [
       'Advancing inverse reinforcement learning research under the supervision of Dr. Chicheng Zhang',
-      'Reviewing literature, implementing RL algorithms, and designing experiments to analyze models',
+      'Reviewing literature, implementing inverse reinforcement learning algorithms, designing experiments, and analyzing the resulting models',
     ],
   },
   {
@@ -65,10 +65,10 @@ const experiences: Experience[] = [
     period: 'Nov 2025 — Mar 2026',
     image: getAssetPath('/diversified-botanics-logo.png'),
     details:
-      'Improved cross-functional decision making across sales and supply chain by streamlining data workflows across Snowflake data warehouses and developing "Sunedrion," a multi-agent LLM Council resulting in enhanced data quality, faster insight generation, and more effective AI-driven decision support for leadership.',
+      'Improved cross-functional decision making across sales and supply chain by streamlining data workflows across Snowflake data warehouses and developing "Sunedrion," a multi-agent LLM Council where each LLM is assigned an executive persona (CEO, CFO, CTO, COO) to analyze cross-functional sales and supply chain data. Before a real executive walks into a board meeting, the agent council helps them prepare by surfacing the questions and viewpoints their fellow board members are likely to raise, resulting in sharper prep, improved decision speed, and stronger strategic accuracy for leadership.',
     technologies: ['Snowflake', 'Multi-Agent LLMs', 'Python', 'Data Warehousing'],
     achievements: [
-      'Built Sunedrion, a multi-agent LLM Council orchestrating multiple models to analyze cross-functional data and automate decision-making',
+      'Built Sunedrion, a multi-agent LLM Council where each agent is assigned an executive persona (CEO, CFO, CTO, COO), helping leadership prepare for board meetings by surfacing likely questions and viewpoints from fellow executives',
       'Streamlined data workflows across Snowflake warehouses, improving data quality and insight generation speed',
     ],
   },
@@ -93,11 +93,11 @@ const experiences: Experience[] = [
     period: 'Jan 2025 — May 2025',
     image: getAssetPath('/university-of-arizona-logo.png'),
     details:
-      'Developed a mobile app for patient data collection, insight generation, and trend prediction for ongoing research, integrating generative AI models within the Paradigm framework to create research-specific images.',
-    technologies: ['Generative AI', 'Mobile Development', 'Python'],
+      'Built an internal generative AI framework for pain-simulation research, using pose-estimation models and Stable Diffusion to generate a posed outline, then refining it with ChatGPT to produce accurate expression and posture in research-specific synthetic images. The framework was later integrated into Paradigm, the broader framework used for the department\'s neurosurgery pain-simulation research.',
+    technologies: ['Generative AI', 'Stable Diffusion', 'Pose Estimation', 'ChatGPT', 'Python'],
     achievements: [
-      'Built a mobile app for patient data collection and trend prediction',
-      'Integrated generative AI into the Paradigm research framework for image synthesis',
+      'Built an internal generative AI framework combining pose-estimation models, Stable Diffusion, and ChatGPT to produce research-specific synthetic images with accurate expression and posture',
+      'Integrated the framework into Paradigm, the research framework used for neurosurgery pain-simulation research',
     ],
   },
   {
@@ -158,7 +158,7 @@ const educations: Education[] = [
     period: 'Aug 2016 — Aug 2020',
     image: getAssetPath('/anna-university-logo.png'),
     details: 'Foundation in electronics and communication engineering, affiliated with Anna University.',
-    coursework: ['Electronics', 'Communication Systems', 'Signal Processing'],
+    coursework: ['Electronics', 'Communication Systems', 'Signal Processing', 'Computer Science', 'Embedded Systems'],
   },
 ];
 
@@ -273,16 +273,19 @@ const About = () => {
           <p className="eyebrow mb-6">about</p>
           <div className="space-y-5 font-display text-xl font-medium leading-relaxed text-ink md:text-2xl">
             <p>
-              I&apos;m Anand, a data scientist who got curious about what makes
-              AI systems trustworthy enough to act on.
+              I&rsquo;m Anand, a data scientist driven by one question: What
+              makes an AI system trustworthy enough to act on?
             </p>
             <p className="font-normal text-ink-soft">
-              Most of my work sits at the intersection of data engineering,
-              machine learning, and generative AI: multi-agent LLM councils for
-              enterprise decision support, clinical and agricultural computer
-              vision, and RAG-driven assistants. The further I went, the more I
-              wanted every layer, from the data pipeline to the model output,
-              to hold up under scrutiny.
+              My work sits at the intersection of data engineering, machine
+              learning, and generative AI spanning multi-agent LLM systems
+              for enterprise decision support, clinical AI, and computer
+              vision for agriculture. I build and own the entire production
+              lifecycle, from data pipelines, model development to deployment
+              and model serving. For me, building AI is not just about
+              creating a capable model; it is about engineering every layer
+              to be reliable, scalable, and robust enough to stand up to
+              real-world scrutiny.
             </p>
           </div>
         </div>

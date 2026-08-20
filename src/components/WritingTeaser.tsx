@@ -15,7 +15,7 @@ const Writing = () => {
         <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-start">
           <div>
             <header className="mb-10 flex items-baseline justify-between border-b border-rule pb-4">
-              <h2 className="font-mono text-sm tracking-wider text-ink-faint">dispatches</h2>
+              <h2 className="font-mono text-sm tracking-wider text-ink-faint">personal article</h2>
               <button
                 onClick={() => navigate('/blog')}
                 className="link-underline font-mono text-[13px] text-ink-soft hover:text-ink"

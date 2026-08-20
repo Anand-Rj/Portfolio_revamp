@@ -14,7 +14,11 @@ interface Thread {
 const threads: Thread[] = [
   {
     title: 'Focused on Hygrivix',
-    note: 'Currently working on developing Hygrivix — building and launching AI applications as a solopreneur, funded in part by a $1,000 pre-seed award from Startup Wildcats.',
+    note: 'Currently working on developing Hygrivix, building and launching AI applications (Talentcard & Kraph, stealth projects by Hygrivix) as a solopreneur. The work is backed by a $1,000 pre-seed award funded by Startup Wildcats.',
+  },
+  {
+    title: 'Writing a research paper on inverse reinforcement learning',
+    note: 'Focused on writing a research paper on inverse reinforcement learning, in collaboration with the Department of Computer Science, University of Arizona College of Science.',
   },
 ];
 
